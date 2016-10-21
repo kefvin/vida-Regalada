@@ -13,7 +13,7 @@ public class Run {
 		
 		while(fi){
 			
-			for(int i = cavallers.size(); i<0; i--){
+			for(int i = cavallers.size()-1; i>0; i--){
 				int dau = rand.nextInt(3)+1;
 				int taulell = caselles.size()-1;
 				
@@ -32,7 +32,7 @@ public class Run {
 				
 				if(posicioCavaller == taulell){
 					fi = false;
-					System.out.println("¡¡¡El cavaller "+cavaller+" ha guanyat!!!");
+					System.out.println("¡¡¡El cavaller "+cavaller.getNom()+" ha guanyat!!!");
 					break;
 				}else if(cavallers.size()==0){
 					fi = false;
@@ -69,19 +69,19 @@ public class Run {
 			}else{
 				casellaVella.removeCavaller();
 				cavallers.remove(cavaller);
-				System.out.println("El cavaller "+cavaller+" ha mort per un bandit.");
+				System.out.println("El cavaller "+cavaller.getNom()+" ha mort per un bandit.");
 			}
 			break;
 		case "Fera":
 			cavaller.setPosicio(cavaller.getPosicio()-5, taulell);
 			casellaVella.removeCavaller();
 			casella.setCavaller(cavaller);
-			System.out.println("El cavaller "+cavaller+" recula per una fera.");
+			System.out.println("El cavaller "+cavaller.getNom()+" recula per una fera.");
 			break;
 		case "Trampa":
 			casellaVella.removeCavaller();
 				cavallers.remove(cavaller);
-				System.out.println("El cavaller "+cavaller+" ha mort per una trampa.");
+				System.out.println("El cavaller "+cavaller.getNom()+" ha mort per una trampa.");
 			break;
 		}
 		
